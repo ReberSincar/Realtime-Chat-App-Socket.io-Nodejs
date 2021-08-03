@@ -1,5 +1,5 @@
 # Realtime-Chat-App-Socket.io-Nodejs
-Production run: npm start
+Production run: npm start\n
 Developer run: npm run dev
 
 <img width="526" alt="Ekran Resmi 2021-08-03 17 55 58" src="https://user-images.githubusercontent.com/36922746/128037928-f42e5823-1553-4b90-81e8-eb72bb48a7b1.png">
