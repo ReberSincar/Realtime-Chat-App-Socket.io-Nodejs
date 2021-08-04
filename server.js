@@ -7,7 +7,7 @@ const { userJoin, getCurrentUser, userLeave, getRoomUsers } = require('./utils/u
 
 const app = express();
 const server = http.createServer(app)
-const io = socketio(server)
+const io = socketio(server).of('/Chat');
 
 // static folder
 app.use(express.static(path.join(__dirname, 'public')));
@@ -18,7 +18,7 @@ io.on('connection', socket => {
         const user = userJoin(socket.id, username, room);
         socket.join(user.room);
 
-        socket.broadcast.to(user.room).emit('message', user.username + ' has joined the chat');
+        socket.to(user.room).emit('message', user.username + ' has joined the chat');
         io.to(user.room).emit('user-room', getRoomUsers(user.room));
     });
 
